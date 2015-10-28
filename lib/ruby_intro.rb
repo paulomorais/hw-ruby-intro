@@ -3,11 +3,15 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  return 0 if arr.empty?
+  arr.inject(:+)
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  return 0 if arr.empty?
+  return arr[0] if arr.length == 1
+  arr.sort! { |x,y| y <=> x }
+  return arr[0] + arr[1]
 end
 
 def sum_to_n? arr, n
@@ -33,3 +37,11 @@ end
 class BookInStock
 # YOUR CODE HERE
 end
+
+raise 'sum([]) != 0' unless sum([]) == 0
+raise 'sum([2,5]) != 7' unless sum([2,5]) == 7
+raise 'sum([4]) != 4' unless sum([4]) == 4
+
+raise 'max_2_sum([]) != 0' unless max_2_sum([]) == 0
+raise 'max_2_sum([2,5]) != 7' unless max_2_sum([2,5,1,3]) == 8
+raise 'max_2_sum([4]) != 4' unless max_2_sum([4]) == 4
