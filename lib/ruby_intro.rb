@@ -15,27 +15,44 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  return false if arr.empty?
+  return false if arr.length == 1
+  arr.each {|e| return true if arr.bsearch { |x| x == n-e } != nil }
+  false
 end
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  return false if s[0] == nil
+  return true if s[0][/[qwrtypsdfghjklzxcvbnm]/i] != nil
+  false
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  return false if s == nil
+  return false if s[/^[01]+$/] == nil
+  return s.to_i(2) % 4 == 0
 end
 
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize(isbn, price)
+    @isbn = isbn
+    @price = price
+    raise ArgumentError if isbn.empty?
+    raise ArgumentError if price <= 0
+  end
+  attr_accessor :isbn, :price
+  
+  def price_as_string
+    return "$%.2f" % price
+  end
 end
 
 raise 'sum([]) != 0' unless sum([]) == 0
