@@ -54,11 +54,3 @@ class BookInStock
     return "$%.2f" % price
   end
 end
-
-raise 'sum([]) != 0' unless sum([]) == 0
-raise 'sum([2,5]) != 7' unless sum([2,5]) == 7
-raise 'sum([4]) != 4' unless sum([4]) == 4
-
-raise 'max_2_sum([]) != 0' unless max_2_sum([]) == 0
-raise 'max_2_sum([2,5]) != 7' unless max_2_sum([2,5,1,3]) == 8
-raise 'max_2_sum([4]) != 4' unless max_2_sum([4]) == 4
